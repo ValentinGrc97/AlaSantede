@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="138dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center_horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rlListUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="128dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/editText1"
+                    android:hint="@string/player1" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="128dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/editText1"
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/editText2"
+                    android:hint="@string/player2"/>
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="128dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/editText2"
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/editText3"
+                    android:hint="@string/player3" />
+
+                <Button
+                    android:id="@+id/addUser"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/editText3"
+                    android:layout_marginTop="60dp"
+                    android:text="@string/addUser"/>
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/buttonPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="@string/drink"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

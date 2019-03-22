@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">A la santé de &#8230;</string>
+    <string name="hello">Boire ou jouer, pourquoi choisir &#8230; Bienvenue sur <b>\"A la santé de &#8230;\"</b>, le jeu
+        d\'alcool en votant pour le plus intelligent, le plus dragueur, le plus flemmard &#8230;, en toute anonymat ! A la
+        vôtre !</string>
+    <string name="player">Joueur</string>
+    <string name="player1">Joueur1</string>
+    <string name="player2">Joueur2</string>
+    <string name="player3">Joueur3</string>
+    <string name="addUsers">Ajouter joueurs</string>
+    <string name="addUser">Ajouter joueur</string>
+    <string name="drink">Buvons !</string>
+    <string name="sentence_lose">Les joueurs ont voté, et leur sentence est irrévocable !\n<b>A la santé de &#8230;</b></string>
+    <string name="worst_dev">Qui est le plus mauvais développeur ?</string>
+
+</resources>
