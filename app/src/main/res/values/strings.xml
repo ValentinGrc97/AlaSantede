@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">A la santé de &#8230;</string>
     <string name="hello">Boire ou jouer, pourquoi choisir &#8230; Bienvenue sur <b>\"A la santé de &#8230;\"</b>, le jeu
-        d\'alcool en votant pour le plus intelligent, le plus dragueur, le plus flemmard &#8230;, en toute anonymat ! A la
+        d\'alcool en votant pour le plus alcoolique, le plus dragueur, le plus flemmard &#8230;, en toute anonymat ! A la
         vôtre !</string>
     <string name="player">Joueur</string>
     <string name="player1">Joueur1</string>
@@ -10,7 +10,15 @@
     <string name="addUsers">Ajouter joueurs</string>
     <string name="addUser">Ajouter joueur</string>
     <string name="drink">Buvons !</string>
+    <string name="go_again">C\'est reparti !</string>
     <string name="sentence_lose">Les joueurs ont voté, et leur sentence est irrévocable !\n<b>A la santé de &#8230;</b></string>
-    <string name="worst_dev">Qui est le plus mauvais développeur ?</string>
+    <string name="worst_student">Qui était le plus mauvais en cours ?</string>
+    <string name="most_alcoholic">Qui est le plus résistant à l\'alcool ?</string>
+    <string name="most_beautiful_boy">Qui est le plus beau mec parmi tous les joueurs ?</string>
+    <string name="most_beautiful_girl">Qui est la plus belle fille parmi toutes les joueuses ?</string>
+    <string name="most_intelligent">Qui est le plus intelligent ?</string>
+    <string name="most_dredger">Qui est le plus dragueur ?</string>
+    <string name="worst_dredger">Qui est le pire dragueur ?</string>
+    <string name="most_slackness">Qui est le plus flemmard ?</string>
 
 </resources>

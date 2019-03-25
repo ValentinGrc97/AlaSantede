@@ -10,28 +10,46 @@ import kotlinx.android.synthetic.main.result.*
  */
 class Result : AppCompatActivity() {
 
+    private val listUserNames = mutableListOf<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.result)
 
-        var listUserNames = mutableListOf<String>()
-        var tabScore = mutableListOf<Int>()
+        val tabScore = mutableListOf<Int>()
         var highscore = 0
         var positionHighscore = 0
-
-        val prefs = getSharedPreferences("preferencename", 0)
+        val prefs = getSharedPreferences("preference", 0)
         val size = prefs.getInt("list_user_size", 0)
+
         for (i in 0 until size) {
 
             listUserNames.add(prefs.getString("list_user_" + (i + 1).toString(), ""))
             tabScore.add(prefs.getInt("score_player" + (i + 1).toString(), 0))
             //TODO gérer égalité
-            if (highscore < tabScore.get(i)) {
-                highscore = tabScore.get(i)
+            if (highscore < tabScore[i]) {
+                highscore = tabScore[i]
                 positionHighscore =  i
             }
         }
-        nameLoser.text = listUserNames.get(positionHighscore)
+        nameLoser.text = listUserNames[positionHighscore]
+
+        go_again.setOnClickListener{
+            cleanScore()
+            startActivity(Intent(this, Question::class.java))
+        }
+    }
+
+    private fun cleanScore(): Boolean {
+
+        val prefs = getSharedPreferences("preference", 0)
+        val editor = prefs.edit()
+
+        for (i in 0 until listUserNames.size) {
+            editor.putInt("score_player" + (i+1).toString(), 0)
+        }
+        editor.putInt("lapQuestion", prefs.getInt("lapQuestion",1)+1)
+        return editor.commit()
     }
 }
