@@ -6,19 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.RadioButton
-import android.widget.TextView
 import com.garcia.valentin.alasantede.R
 
 
 /**
  * Created by valentin on 22/03/2019.
  */
-class GridViewAdapter(context: Context, names: MutableList<String>) : BaseAdapter() {
-
-    private var context = context
-    private var names = names
-    var selectedPosition = -1
-    private val selectedRB: RadioButton? = null
+class GridViewAdapter(private var context: Context, private var names: MutableList<String>) : BaseAdapter() {
 
     //class GridViewAdapter(context: Context, names: Array<String>)
 
@@ -41,8 +35,8 @@ class GridViewAdapter(context: Context, names: MutableList<String>) : BaseAdapte
             convertView = LayoutInflater.from(context).inflate(R.layout.gridview_layout, null)
         }
         val radioButton: RadioButton = convertView!!.findViewById(R.id.radiobutton)
-        radioButton.text = names.get(position)
-        radioButton.tag = names.get(position)
+        radioButton.text = names[position]
+        radioButton.tag = names[position]
         return convertView
     }
 

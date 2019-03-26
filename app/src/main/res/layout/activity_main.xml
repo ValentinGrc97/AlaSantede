@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     tools:context="com.garcia.valentin.alasantede.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_main"
+        android:scaleType="centerCrop"
+        android:alpha="0.75" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,16 +24,39 @@
             android:layout_marginTop="128dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:fontFamily="serif-monospace"
             android:text="@string/hello"
+            android:textSize="18sp"
+            android:background="@drawable/background_rectangle"
             android:textAlignment="center" />
 
-        <Button
+        <LinearLayout
             android:id="@+id/buttonStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="110dp"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/addUsers"/>
+            android:layout_below="@id/hello"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_shape">
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addUsers"
+                android:textColor="@color/white"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/drunk"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

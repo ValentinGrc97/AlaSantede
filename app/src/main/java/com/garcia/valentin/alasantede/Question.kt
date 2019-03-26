@@ -18,6 +18,7 @@ class Question : AppCompatActivity() {
     private var listUserNames = mutableListOf<String>()
     private var tabScore = mutableListOf<Int>()
     private var lapPlayer = 1
+    private var isAnswerSelected = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,16 +42,18 @@ class Question : AppCompatActivity() {
 
     fun onRadioButtonClicked(view: View) {
 
-        (0 until listUserNames.size)
-                .filter { view.tag != null && view.tag.toString() == listUserNames[it] }
-                .forEach { saveScore(it) }
-        if (lapPlayer < listUserNames.size) {
-            startActivity(Intent(this, Question::class.java))
-            finish()
-        }
-        else {
-            startActivity(Intent(this, Result::class.java))
-            finish()
+        if(!isAnswerSelected) {
+            isAnswerSelected = true
+            (0 until listUserNames.size)
+                    .filter { view.tag != null && view.tag.toString() == listUserNames[it] }
+                    .forEach { saveScore(it) }
+            if (lapPlayer < listUserNames.size) {
+                startActivity(Intent(this, Question::class.java))
+                finish()
+            } else {
+                startActivity(Intent(this, Result::class.java))
+                finish()
+            }
         }
     }
 

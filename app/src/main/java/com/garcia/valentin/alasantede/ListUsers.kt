@@ -1,13 +1,21 @@
 package com.garcia.valentin.alasantede
 
 import android.content.Intent
+import android.graphics.PorterDuff
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.EditText
 import android.widget.RelativeLayout
+import android.widget.Toast
 import kotlinx.android.synthetic.main.list_users.*
 import java.util.concurrent.ThreadLocalRandom
+import android.text.InputType
+import android.widget.TextView
+import android.widget.ScrollView
+
+
 
 /**
  * Created by valentin on 21/03/2019.
@@ -33,7 +41,12 @@ class ListUsers : AppCompatActivity() {
             getNames()
             saveListUsers()
             shuffleQuestions()
-            startActivity(Intent(this, Question::class.java))
+            if (listUserNames.size >= 3) {
+                startActivity(Intent(this, Question::class.java))
+            }
+            else {
+                Toast.makeText(this, R.string.error_nb_players, Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -48,6 +61,24 @@ class ListUsers : AppCompatActivity() {
         editText.id = View.generateViewId()
         editTextLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL)
         editTextLayoutParams.addRule(RelativeLayout.BELOW, lastEditTextId)
+        editText.setHintTextColor(resources.getColor(R.color.white))
+        editText.setTextColor(resources.getColor(R.color.white))
+        editText.inputType = (InputType.TYPE_TEXT_VARIATION_PERSON_NAME)
+        //cursor
+        try {
+            val f = TextView::class.java.getDeclaredField("mCursorDrawableRes")
+            f.isAccessible = true
+            f.set(editText, R.drawable.cursor_edittext)
+        } catch (ignored: Exception) { }
+        editText.background.setColorFilter(resources.getColor(R.color.black), PorterDuff.Mode.SRC_ATOP)
+        editText.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                editText.background.setColorFilter(resources.getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP)
+            } else {
+                editText.background.setColorFilter(resources.getColor(R.color.black), android.graphics.PorterDuff.Mode.SRC_ATOP)
+            }
+        }
+        editText.typeface = Typeface.create("serif-monospace", Typeface.NORMAL)
         editText.layoutParams = editTextLayoutParams
         editText.hint = getString(R.string.player) + (nbUsers+1).toString()
         rlListUsers.addView(editText)
@@ -56,17 +87,20 @@ class ListUsers : AppCompatActivity() {
         buttonLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL)
         buttonLayoutParams.addRule(RelativeLayout.BELOW, lastEditTextId)
         addUser.layoutParams = buttonLayoutParams
-        scrollView.fullScroll(View.FOCUS_DOWN)
+        scrollView.post({ scrollView.fullScroll(ScrollView.FOCUS_DOWN) })
     }
 
     private fun getNames() {
 
         var i = 0
 
+        listUserNames.clear()
         while (i < rlListUsers.childCount) {
             if (rlListUsers.getChildAt(i) is EditText) {
                 val edittext = rlListUsers.getChildAt(i) as EditText
-                listUserNames.add(edittext.text.toString())
+                if(edittext.text.toString() != "") {
+                    listUserNames.add(edittext.text.toString())
+                }
             }
             i++
         }

@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_beer"
+        android:alpha="0.75"
+        android:scaleType="centerCrop"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,17 +21,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/player"
+            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"
-            />
+            android:layout_marginTop="64dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/toYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/to_you"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="64dp"
+            android:textSize="24sp"
+            android:fontFamily="serif-monospace" />
 
         <TextView
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/worst_student"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"/>
+            android:gravity="center"
+            android:layout_marginTop="32dp" />
 
         <GridView
             android:id="@+id/gridview"

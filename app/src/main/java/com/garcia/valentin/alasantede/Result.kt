@@ -17,27 +17,30 @@ class Result : AppCompatActivity() {
 
         setContentView(R.layout.result)
 
-        val tabScore = mutableListOf<Int>()
         var highscore = 0
-        var positionHighscore = 0
         val prefs = getSharedPreferences("preference", 0)
         val size = prefs.getInt("list_user_size", 0)
+        var drinking = ""
 
         for (i in 0 until size) {
 
             listUserNames.add(prefs.getString("list_user_" + (i + 1).toString(), ""))
-            tabScore.add(prefs.getInt("score_player" + (i + 1).toString(), 0))
-            //TODO gérer égalité
-            if (highscore < tabScore[i]) {
-                highscore = tabScore[i]
-                positionHighscore =  i
+            val score = prefs.getInt("score_player" + (i + 1).toString(), 0)
+            if (highscore < score) {
+                highscore = score
+                drinking = listUserNames[i]
+            }
+            else if (highscore == score && highscore > 0) {
+                drinking = drinking.replace(" et ", ", ")
+                drinking = drinking + " et " + listUserNames[i]
             }
         }
-        nameLoser.text = listUserNames[positionHighscore]
+        nameLoser.text = drinking
 
         go_again.setOnClickListener{
             cleanScore()
             startActivity(Intent(this, Question::class.java))
+            finish()
         }
     }
 

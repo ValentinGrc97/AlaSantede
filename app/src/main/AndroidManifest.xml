@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.garcia.valentin.alasantede.MainActivity">
+        <activity android:name="com.garcia.valentin.alasantede.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,15 +19,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ListUsers">
+        <activity android:name=".ListUsers"
+            android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".Question">
+        <activity android:name=".Question"
+            android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".Result">
+        <activity android:name=".Result"
+            android:screenOrientation="portrait">
 
         </activity>
     </application>

@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_cheers"
+        android:alpha="0.75"
+        android:scaleType="centerCrop"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,6 +22,8 @@
             android:text="@string/sentence_lose"
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="serif-monospace"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"/>
@@ -25,18 +34,38 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:layout_below="@id/textLose"
             android:text="@string/player"
-            android:textSize="32sp"/>
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:fontFamily="serif-monospace" />
 
-        <Button
+        <LinearLayout
             android:id="@+id/go_again"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_marginBottom="100dp"
-            android:text="@string/go_again" />
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_shape">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/go_again"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/icon_go_again"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 

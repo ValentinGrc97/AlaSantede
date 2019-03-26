@@ -1,15 +1,16 @@
 <resources>
     <string name="app_name">A la santé de &#8230;</string>
-    <string name="hello">Boire ou jouer, pourquoi choisir &#8230; Bienvenue sur <b>\"A la santé de &#8230;\"</b>, le jeu
-        d\'alcool en votant pour le plus alcoolique, le plus dragueur, le plus flemmard &#8230;, en toute anonymat ! A la
+    <string name="hello">Boire ou jouer, pourquoi choisir&#8230; Bienvenue sur <b>\"A la santé de&#8230;\"</b>, le jeu
+        d\'alcool en votant pour le plus alcoolique, le plus dragueur, le plus flemmard&#8230; en toute anonymat ! A la
         vôtre !</string>
     <string name="player">Joueur</string>
     <string name="player1">Joueur1</string>
     <string name="player2">Joueur2</string>
     <string name="player3">Joueur3</string>
-    <string name="addUsers">Ajouter joueurs</string>
+    <string name="addUsers">AJOUTER JOUEURS</string>
     <string name="addUser">Ajouter joueur</string>
-    <string name="drink">Buvons !</string>
+    <string name="drink">BUVONS !</string>
+    <string name="to_you">A toi de jouer :</string>
     <string name="go_again">C\'est reparti !</string>
     <string name="sentence_lose">Les joueurs ont voté, et leur sentence est irrévocable !\n<b>A la santé de &#8230;</b></string>
     <string name="worst_student">Qui était le plus mauvais en cours ?</string>
@@ -20,5 +21,7 @@
     <string name="most_dredger">Qui est le plus dragueur ?</string>
     <string name="worst_dredger">Qui est le pire dragueur ?</string>
     <string name="most_slackness">Qui est le plus flemmard ?</string>
+    <string name="error_nb_players">Ce jeu n\'a aucun intérêt si vous n\'êtes pas au moins 3 joueurs ! Faut arrêter l\'alcool
+        maintenant &#8230;</string>
 
 </resources>
