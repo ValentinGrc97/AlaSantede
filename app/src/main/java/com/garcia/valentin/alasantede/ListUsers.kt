@@ -131,7 +131,7 @@ class ListUsers : AppCompatActivity() {
         val editor = prefs.edit()
         val questionsArray: Array<String>
 
-        if (prefs.getString("difficulty", "soft") == "soft") {
+        if (prefs.getString("difficulty", "SOFT") == "SOFT") {
             questionsArray = arrayOf(getString(R.string.worst_student), getString(R.string.most_intelligent),
                     getString(R.string.most_sleep), getString(R.string.most_roisterer),
                     getString(R.string.most_emotional), getString(R.string.most_alcoholic), getString(R.string.worst_alcoholic),
