@@ -36,7 +36,7 @@ class GridViewAdapter(private var context: Context, private var names: MutableLi
         }
         val radioButton: RadioButton = convertView!!.findViewById(R.id.radiobutton)
         radioButton.text = names[position]
-        radioButton.tag = names[position]
+        radioButton.tag = position
         return convertView
     }
 

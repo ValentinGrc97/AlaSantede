@@ -3,6 +3,11 @@ package com.garcia.valentin.alasantede
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.result.*
 
 /**
@@ -11,6 +16,8 @@ import kotlinx.android.synthetic.main.result.*
 class Result : AppCompatActivity() {
 
     private val listUserNames = mutableListOf<String>()
+    private lateinit var mInterstitialAd: InterstitialAd
+    private var lapQuestion = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +28,20 @@ class Result : AppCompatActivity() {
         val prefs = getSharedPreferences("preference", 0)
         val size = prefs.getInt("list_user_size", 0)
         var drinking = ""
+        lapQuestion = prefs.getInt("lapQuestion", 1)
+
+        MobileAds.initialize(this, getString(R.string.admob_app_id));
+        mInterstitialAd = InterstitialAd(this).apply {
+            //TODO : this is production id, need to be set before publication
+            //adUnitId = getString(R.string.admob_pub_id)
+            adUnitId = getString(R.string.test_admob_pub_id)
+            loadAd(AdRequest.Builder().build())
+            adListener = (object : AdListener() {
+                override fun onAdClosed() {
+                    startNewQuestion()
+                }
+            })
+        }
 
         for (i in 0 until size) {
 
@@ -38,9 +59,18 @@ class Result : AppCompatActivity() {
         nameLoser.text = drinking
 
         go_again.setOnClickListener{
-            cleanScore()
-            startActivity(Intent(this, Question::class.java))
-            finish()
+            if (lapQuestion%3 == 1) {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
+                cleanScore()
+            }
+            else {
+                cleanScore()
+                startNewQuestion()
+            }
         }
     }
 
@@ -54,5 +84,10 @@ class Result : AppCompatActivity() {
         }
         editor.putInt("lapQuestion", prefs.getInt("lapQuestion",1)+1)
         return editor.commit()
+    }
+
+    private fun startNewQuestion() {
+        startActivity(Intent(this,Question::class.java))
+        finish()
     }
 }

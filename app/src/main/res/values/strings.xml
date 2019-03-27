@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">A la santé de &#8230;</string>
+
+    <string name="admob_app_id">ca-app-pub-5168307355330093~5228575834</string>
+    <string name="admob_pub_id">ca-app-pub-5168307355330093/7010407270</string>
+    <string name="test_admob_pub_id">ca-app-pub-3940256099942544/1033173712</string>
+
     <string name="hello">Boire ou jouer, pourquoi choisir&#8230; Bienvenue sur <b>\"A la santé de&#8230;\"</b>, le jeu
         d\'alcool en votant pour le plus alcoolique, le plus dragueur, le plus flemmard&#8230; en toute anonymat ! A la
         vôtre !</string>
@@ -9,19 +14,45 @@
     <string name="player3">Joueur3</string>
     <string name="addUsers">AJOUTER JOUEURS</string>
     <string name="addUser">Ajouter joueur</string>
-    <string name="drink">BUVONS !</string>
+    <string name="error_nb_players">Ce jeu n\'a aucun intérêt si vous n\'êtes pas au moins 3 joueurs ! Faut arrêter l\'alcool
+        maintenant &#8230;</string>
+    <string name="soft">SOFT</string>
+    <string name="hard">HARD</string>
     <string name="to_you">A toi de jouer :</string>
     <string name="go_again">C\'est reparti !</string>
     <string name="sentence_lose">Les joueurs ont voté, et leur sentence est irrévocable !\n<b>A la santé de &#8230;</b></string>
-    <string name="worst_student">Qui était le plus mauvais en cours ?</string>
-    <string name="most_alcoholic">Qui est le plus résistant à l\'alcool ?</string>
-    <string name="most_beautiful_boy">Qui est le plus beau mec parmi tous les joueurs ?</string>
-    <string name="most_beautiful_girl">Qui est la plus belle fille parmi toutes les joueuses ?</string>
-    <string name="most_intelligent">Qui est le plus intelligent ?</string>
-    <string name="most_dredger">Qui est le plus dragueur ?</string>
-    <string name="worst_dredger">Qui est le pire dragueur ?</string>
-    <string name="most_slackness">Qui est le plus flemmard ?</string>
-    <string name="error_nb_players">Ce jeu n\'a aucun intérêt si vous n\'êtes pas au moins 3 joueurs ! Faut arrêter l\'alcool
-        maintenant &#8230;</string>
+    
+    <!--SOFT-->
+    <string name="worst_student">Qui était le / la plus mauvais(e) en cours ?</string>
+    <string name="most_intelligent">Qui est le / la plus intelligent(e) ?</string>
+    <string name="most_sleep">Qui est le / la plus dormeur / dormeuse ?</string>
+    <string name="most_roisterer">Qui est le / la plus fêtard(e) ?</string>
+    <string name="most_emotional">Qui est le / la plus émotif / émotive ?</string>
+    
+    <!--BOTH-->
+    <string name="most_alcoholic">Qui est le / la plus résistant(e) à l\'alcool ?</string>
+    <string name="worst_alcoholic">Qui tient le moins l\'alcool ?</string>
+    <string name="most_beautiful_boy">Qui est le plus beau mec / la plus belle fille parmi tous les joueurs ?</string>
+    <string name="most_dredger">Qui est le / la plus dragueur / dragueuse ?</string>
+    <string name="worst_dredger">Qui est le / la pire dragueur / dragueuse ?</string>
+    <string name="most_slackness">Qui est le / la plus flemmard ?</string>
+    <string name="most_drunk">Qui est le / la plus bourré(e) ?</string>
+    <string name="worst_drunk">Qui n\'a pas encore assez bu et va boire après cette question ?</string>
+    <string name="most_extrovert">Qui est le / la plus extraverti(e) ?</string>
+    <string name="most_loyal">Qui est le / la plus fidèle en couple ?</string>
+    <string name="most_spew">Qui vomit à chaque soirée ?</string>
+    <string name="most_lier">Qui est le / la plus gros(se) menteur / menteuse ?</string>
+
+    <!--HARD-->
+    <string name="most_precocious">Qui est le plus précoce ?</string>
+    <string name="best_shot">Qui est le meilleur coup au lit ?</string>
+    <string name="worst_shot">Qui est le pire coup au lit ?</string>
+    <string name="most_apt_milf">Qui est le plus susceptible de se taper une MILF ?</string>
+    <string name="most_sex_like">Qui aime le plus le sexe ?</string>
+    <string name="most_apt_bit_h">Qui est le plus susceptible d\'aller voir une p*te ?</string>
+    <string name="most_cheater">Qui est le / la plus susceptible de tromper sa meuf / son mec ?</string>
+    <string name="most_sado">Qui pourrait être le prochain Christian Grey ? (espèce de sadique)</string>
+    <string name="most_michto">Qui est la plus michtonneuse ?</string>
+    <string name="most_masturbate">Qui se masturbe le plus par jour ?</string>
 
 </resources>

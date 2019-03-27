@@ -5,6 +5,7 @@ import android.graphics.PorterDuff
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.InputFilter
 import android.view.View
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -14,6 +15,9 @@ import java.util.concurrent.ThreadLocalRandom
 import android.text.InputType
 import android.widget.TextView
 import android.widget.ScrollView
+import android.R.attr.maxLength
+
+
 
 
 
@@ -37,16 +41,17 @@ class ListUsers : AppCompatActivity() {
             addEditText()
         }
 
-        buttonPlay.setOnClickListener {
-            getNames()
-            saveListUsers()
-            shuffleQuestions()
-            if (listUserNames.size >= 3) {
-                startActivity(Intent(this, Question::class.java))
-            }
-            else {
-                Toast.makeText(this, R.string.error_nb_players, Toast.LENGTH_LONG).show()
-            }
+        val prefs = getSharedPreferences("preference", 0)
+        val editor = prefs.edit()
+
+        buttonSoft.setOnClickListener {
+            editor.putString("difficulty", getString(R.string.soft)).apply()
+            selectedDifficulty()
+        }
+
+        buttonHard.setOnClickListener {
+            editor.putString("difficulty", getString(R.string.hard)).apply()
+            selectedDifficulty()
         }
     }
 
@@ -62,6 +67,7 @@ class ListUsers : AppCompatActivity() {
         editTextLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL)
         editTextLayoutParams.addRule(RelativeLayout.BELOW, lastEditTextId)
         editText.setHintTextColor(resources.getColor(R.color.white))
+        editText.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(20))
         editText.setTextColor(resources.getColor(R.color.white))
         editText.inputType = (InputType.TYPE_TEXT_VARIATION_PERSON_NAME)
         //cursor
@@ -121,14 +127,30 @@ class ListUsers : AppCompatActivity() {
 
     private fun shuffleQuestions(): Boolean {
 
-        //Add questions here
-        val questionsArray = arrayOf(getString(R.string.worst_student), getString(R.string.most_alcoholic),
-                getString(R.string.most_beautiful_boy), getString(R.string.most_beautiful_girl),
-                getString(R.string.most_intelligent), getString(R.string.most_dredger), getString(R.string.worst_dredger),
-                getString(R.string.most_slackness))
-        val rnd = ThreadLocalRandom.current()
         val prefs = getSharedPreferences("preference", 0)
         val editor = prefs.edit()
+        val questionsArray: Array<String>
+
+        if (prefs.getString("difficulty", "soft") == "soft") {
+            questionsArray = arrayOf(getString(R.string.worst_student), getString(R.string.most_intelligent),
+                    getString(R.string.most_sleep), getString(R.string.most_roisterer),
+                    getString(R.string.most_emotional), getString(R.string.most_alcoholic), getString(R.string.worst_alcoholic),
+                    getString(R.string.most_beautiful_boy), getString(R.string.most_dredger), getString(R.string.worst_dredger),
+                    getString(R.string.most_slackness), getString(R.string.most_drunk), getString(R.string.worst_drunk),
+                    getString(R.string.most_extrovert), getString(R.string.most_loyal), getString(R.string.most_spew),
+                    getString(R.string.most_lier))
+        }
+        else {
+            questionsArray = arrayOf(getString(R.string.most_alcoholic), getString(R.string.worst_alcoholic),
+                    getString(R.string.most_beautiful_boy), getString(R.string.most_dredger), getString(R.string.worst_dredger),
+                    getString(R.string.most_slackness), getString(R.string.most_drunk), getString(R.string.worst_drunk),
+                    getString(R.string.most_extrovert), getString(R.string.most_loyal), getString(R.string.most_spew),
+                    getString(R.string.most_lier), getString(R.string.most_precocious), getString(R.string.best_shot),
+                    getString(R.string.worst_shot), getString(R.string.most_apt_milf), getString(R.string.most_sex_like),
+                    getString(R.string.most_apt_bit_h), getString(R.string.most_cheater), getString(R.string.most_sado),
+                    getString(R.string.most_michto), getString(R.string.most_masturbate))
+        }
+        val rnd = ThreadLocalRandom.current()
 
         for (i in questionsArray.size - 1 downTo 1) {
             val index = rnd.nextInt(i + 1)
@@ -142,5 +164,17 @@ class ListUsers : AppCompatActivity() {
         }
         editor.putInt("lapQuestion", 1)
         return editor.commit()
+    }
+
+    private fun selectedDifficulty() {
+        getNames()
+        saveListUsers()
+        shuffleQuestions()
+        if (listUserNames.size >= 3) {
+            startActivity(Intent(this, Question::class.java))
+        }
+        else {
+            Toast.makeText(this, R.string.error_nb_players, Toast.LENGTH_LONG).show()
+        }
     }
 }

@@ -50,11 +50,12 @@
 
         <GridView
             android:id="@+id/gridview"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="100dp"
             android:numColumns="2"
+            android:columnWidth="120dp"
             android:gravity="start">
 
         </GridView>
