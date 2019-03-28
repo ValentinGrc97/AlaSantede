@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.widget.Toast
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
@@ -40,6 +41,12 @@ class Result : AppCompatActivity() {
                 override fun onAdClosed() {
                     startNewQuestion()
                 }
+
+                override fun onAdFailedToLoad(p0: Int) {
+                    super.onAdFailedToLoad(p0)
+
+                    Toast.makeText(applicationContext, "Vérifiez votre connexoin internet ...", Toast.LENGTH_SHORT).show()
+                }
             })
         }
 
@@ -60,12 +67,7 @@ class Result : AppCompatActivity() {
 
         go_again.setOnClickListener{
             if (lapQuestion%3 == 1) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                } else {
-                    Log.d("TAG", "The interstitial wasn't loaded yet.");
-                }
-                cleanScore()
+                isLoadedInterstitial()
             }
             else {
                 cleanScore()
@@ -89,5 +91,15 @@ class Result : AppCompatActivity() {
     private fun startNewQuestion() {
         startActivity(Intent(this,Question::class.java))
         finish()
+    }
+
+    private fun isLoadedInterstitial() {
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+            cleanScore()
+        }
+        else {
+            isLoadedInterstitial()
+        }
     }
 }
