@@ -16,6 +16,7 @@ import android.widget.TextView
 import android.widget.ScrollView
 import com.garcia.valentin.alasantede.utils.listQuestions
 import com.garcia.valentin.alasantede.utils.listUserNames
+import com.garcia.valentin.alasantede.utils.shuffleQuestions
 import com.garcia.valentin.alasantede.utils.tabScore
 
 /**
@@ -97,8 +98,8 @@ class ListUsers : AppCompatActivity() {
     private fun selectedDifficulty() {
 
         getUsers()
-        listQuestions.shuffle()
         if (listUserNames.size >= 3) {
+            shuffleQuestions(this)
             startActivity(Intent(this, Question::class.java))
         }
         else {
