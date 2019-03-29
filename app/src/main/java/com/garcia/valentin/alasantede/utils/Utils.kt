@@ -72,5 +72,4 @@ fun cleanScore() {
     for (i in 0 until tabScore.size) {
         tabScore[i] = 0
     }
-    lapQuestion++
 }

@@ -50,4 +50,10 @@ class Question : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        cleanScore()
+    }
 }

@@ -18,6 +18,11 @@
         maintenant &#8230;</string>
     <string name="soft">SOFT</string>
     <string name="hard">HARD</string>
+    <string name="title_alert">Etes vous sûr d\'utiliser le mode hard ?</string>
+    <string name="message_alert">Ce mode contient des questions assez osées, à n\'utiliser qu\'avec des personnes majeures et qui ne sont pas
+    facilement choquées !</string>
+    <string name="play">Jouer</string>
+    <string name="cancel">Annuler</string>
     <string name="to_you">A toi de jouer :</string>
     <string name="go_again">C\'est reparti !</string>
     <string name="sentence_lose">Les joueurs ont voté, et leur sentence est irrévocable !\n<b>A la santé de &#8230;</b></string>

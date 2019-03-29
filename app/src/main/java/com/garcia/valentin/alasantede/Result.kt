@@ -40,6 +40,7 @@ class Result : AppCompatActivity() {
                 override fun onAdClosed() {
 
                     cleanScore()
+                    lapQuestion++
                     startNewQuestion()
                 }
 
@@ -70,6 +71,7 @@ class Result : AppCompatActivity() {
             }
             else {
                 cleanScore()
+                lapQuestion++
                 startNewQuestion()
             }
         }
@@ -89,6 +91,7 @@ class Result : AppCompatActivity() {
             mInterstitialAd.show()
         } else {
             cleanScore()
+            lapQuestion++
             startNewQuestion()
         }
     }
@@ -97,5 +100,11 @@ class Result : AppCompatActivity() {
 
         startActivity(Intent(this,Question::class.java))
         finish()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        cleanScore()
     }
 }

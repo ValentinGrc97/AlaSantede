@@ -14,10 +14,10 @@ import kotlinx.android.synthetic.main.list_users.*
 import android.text.InputType
 import android.widget.TextView
 import android.widget.ScrollView
-import com.garcia.valentin.alasantede.utils.listQuestions
 import com.garcia.valentin.alasantede.utils.listUserNames
 import com.garcia.valentin.alasantede.utils.shuffleQuestions
 import com.garcia.valentin.alasantede.utils.tabScore
+import android.support.v7.app.AlertDialog
 
 /**
  * Created by valentin on 21/03/2019.
@@ -46,8 +46,16 @@ class ListUsers : AppCompatActivity() {
             selectedDifficulty()
         }
         buttonHard.setOnClickListener {
-            editor.putString("difficulty", getString(R.string.hard)).apply()
-            selectedDifficulty()
+            AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.title_alert))
+                    .setMessage(getString(R.string.message_alert))
+                    .setPositiveButton(android.R.string.yes) { _, _ ->
+                        editor.putString("difficulty", getString(R.string.hard)).apply()
+                        selectedDifficulty()
+                    }
+                    .setNegativeButton(R.string.cancel, null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show()
         }
     }
 
