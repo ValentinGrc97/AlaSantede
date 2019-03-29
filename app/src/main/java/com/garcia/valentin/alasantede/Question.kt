@@ -32,6 +32,15 @@ class Question : AppCompatActivity() {
         name.text = listUserNames[lapPlayer-1]
         question.text = listQuestions[lapQuestion-1]
         gridview.adapter = GridViewAdapter(this, listUserNames)
+
+        if (lapPlayer > 1) {
+            pass.visibility = View.INVISIBLE
+        }
+        pass.setOnClickListener {
+            lapQuestion++
+            startActivity(Intent(this, Question::class.java))
+            finish()
+        }
     }
 
     fun onRadioButtonClicked(view: View) {

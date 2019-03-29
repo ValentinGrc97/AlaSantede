@@ -24,6 +24,7 @@
     <string name="play">Jouer</string>
     <string name="cancel">Annuler</string>
     <string name="to_you">A toi de jouer :</string>
+    <string name="pass">Passer la question</string>
     <string name="go_again">C\'est reparti !</string>
     <string name="sentence_lose">Les joueurs ont voté, et leur sentence est irrévocable !\n<b>A la santé de &#8230;</b></string>
     <string name="error_internet">Vérifiez votre connexion internet &#8230;</string>
