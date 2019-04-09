@@ -6,7 +6,7 @@
     <string name="test_admob_pub_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <string name="hello">Boire ou jouer, pourquoi choisir&#8230; Bienvenue sur <b>\"A la santé de&#8230;\"</b>, le jeu
-        d\'alcool en votant pour le plus alcoolique, le plus dragueur, le plus flemmard&#8230; en toute anonymat ! A la
+        d\'alcool en votant chacun son tour pour le plus alcoolique, le plus dragueur, le plus flemmard&#8230;\n A la
         vôtre !</string>
     <string name="player">Joueur</string>
     <string name="player1">Joueur1</string>
@@ -35,6 +35,18 @@
     <string name="most_sleep">Qui est le / la plus dormeur / dormeuse ?</string>
     <string name="most_roisterer">Qui est le / la plus fêtard(e) ?</string>
     <string name="most_emotional">Qui est le / la plus émotif / émotive ?</string>
+    <string name="most_arrogant">Qui est le / la plus arrogant(e) ?</string>
+    <string name="most_skinflint">Qui est le / la plus radin(e) ?</string>
+    <string name="worst_cook">Qui est le pire cuisinier ?</string>
+    <string name="most_snore">Qui ronfle le plus ?</string>
+    <string name="most_shy">Qui est le / la plus timide ?</string>
+    <string name="most_shopping">Qui est le / la plus accro au shopping ?</string>
+    <string name="most_talkative">Qui est le / la plus bavard(e) ?</string>
+    <string name="worst_singer">Qui est le pire chanteur ?</string>
+    <string name="best_english">Qui parle le mieux anglais ?</string>
+    <string name="worst_english">Qui parle le moins bien anglais ?</string>
+    <string name="best_sport">Qui est le / la plus sportif / sportive ?</string>
+    <string name="most_cry">Qui pleure le plus devant des films ?</string>
     
     <!--BOTH-->
     <string name="most_alcoholic">Qui est le / la plus résistant(e) à l\'alcool ?</string>
@@ -49,6 +61,12 @@
     <string name="most_loyal">Qui est le / la plus fidèle en couple ?</string>
     <string name="most_spew">Qui vomit à chaque soirée ?</string>
     <string name="most_lier">Qui est le / la plus gros(se) menteur / menteuse ?</string>
+    <string name="most_duck">Qui est le plus canard ?</string>
+    <string name="worst_driver">Qui est le pire chauffard sur la route ?</string>
+    <string name="worst_character">Qui a le pire caractère ?</string>
+    <string name="justin_bieber">Qui écoute du Justin Bieber en cachette ?</string>
+    <string name="kiss_celebrity">Qui pourrait embrasser une affiche d\'une célébrité ?</string>
+    <string name="lie_for_game">Qui a menti exprès pour faire boire quelqu\'un en particulier?</string>
 
     <!--HARD-->
     <string name="most_precocious">Qui est le plus précoce ?</string>
@@ -61,5 +79,15 @@
     <string name="most_sado">Qui pourrait être le prochain Christian Grey ? (espèce de sadique)</string>
     <string name="most_michto">Qui est la plus michtonneuse ?</string>
     <string name="most_masturbate">Qui se masturbe le plus par jour ?</string>
+    <string name="worst_stink">Qui pue le plus ?</string>
+    <string name="eat_shit">Qui pourrait le plus manger ses propres excréments ?</string>
+    <string name="most_sister">Qui pourrait coucher avec quelqu\'un de sa famille ?</string>
+    <string name="mistake_name">Qui pourrait se tromper de nom pendant l\acte ?</string>
+    <string name="fake_orgasm">Qui pourrait le plus faire semblant d\'avoir un orgasme ?</string>
+    <string name="get_nudes">Qui réclame le plus de nudes ?</string>
+    <string name="send_nudes">Qui envoie le plus de nudes ?</string>
+    <string name="sex_here">Qui a le plus envie de coucher avec une personne ici ?</string>
+    <string name="polygame">Qui est le plus polygame ?</string>
+    <string name="sextoys">Qui aime le plus les sextoys ?</string>
 
 </resources>

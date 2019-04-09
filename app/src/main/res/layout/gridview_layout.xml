@@ -6,10 +6,11 @@
     <RadioButton
         android:id="@+id/radiobutton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="45dp"
         android:layout_gravity="start"
         android:text="@string/player"
         android:textColor="@color/white"
+        android:textSize="16sp"
         android:fontFamily="serif-monospace"
         android:onClick="onRadioButtonClicked"/>
 

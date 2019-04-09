@@ -19,27 +19,25 @@
             android:id="@+id/textLose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sentence_lose"
             android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="serif-monospace"
+            android:text="@string/sentence_lose"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:fontFamily="serif-monospace"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"/>
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/nameLoser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:layout_below="@id/textLose"
+            android:layout_centerInParent="true"
+            android:fontFamily="serif-monospace"
             android:text="@string/player"
-            android:textSize="32sp"
-            android:textColor="@color/white"
-            android:fontFamily="serif-monospace" />
+            android:textColor="@color/beer"
+            android:textSize="48sp" />
 
         <LinearLayout
             android:id="@+id/go_again"

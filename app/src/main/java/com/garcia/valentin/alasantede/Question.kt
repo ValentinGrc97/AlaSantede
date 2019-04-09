@@ -29,7 +29,7 @@ class Question : AppCompatActivity() {
             shuffleQuestions(this)
             lapQuestion = 1
         }
-        name.text = listUserNames[lapPlayer-1]
+        name.text = listUserNames[lapPlayer-1].toUpperCase()
         question.text = listQuestions[lapQuestion-1]
         gridview.adapter = GridViewAdapter(this, listUserNames)
 

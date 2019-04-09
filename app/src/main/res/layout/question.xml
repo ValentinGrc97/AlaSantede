@@ -20,11 +20,12 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/player"
-            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="64dp"
-            android:textSize="24sp" />
+            android:fontFamily="monospace"
+            android:text="@string/player"
+            android:textColor="@color/beer"
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/toYou"
@@ -33,7 +34,7 @@
             android:text="@string/to_you"
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="50dp"
             android:textSize="24sp"
             android:fontFamily="serif-monospace" />
 
@@ -41,22 +42,24 @@
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
             android:text="@string/worst_student"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:layout_marginTop="32dp" />
+            android:textSize="24sp" />
 
         <GridView
             android:id="@+id/gridview"
-            android:layout_width="240dp"
+            android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
-            android:numColumns="2"
-            android:columnWidth="120dp"
-            android:gravity="start">
+            android:layout_marginTop="50dp"
+            android:background="@drawable/background_rectangle"
+            android:columnWidth="150dp"
+            android:gravity="start"
+            android:numColumns="2">
 
         </GridView>
 

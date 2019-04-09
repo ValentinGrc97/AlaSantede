@@ -64,7 +64,7 @@ class Result : AppCompatActivity() {
                 drinking = drinking + " et " + listUserNames[i]
             }
         }
-        nameLoser.text = drinking
+        nameLoser.text = drinking.toUpperCase()
         go_again.setOnClickListener{
             if (lapQuestion%3 == 1) {
                 showInterstitial()

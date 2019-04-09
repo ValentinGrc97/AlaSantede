@@ -35,7 +35,7 @@ class GridViewAdapter(private var context: Context, private var names: MutableLi
             convertView = LayoutInflater.from(context).inflate(R.layout.gridview_layout, null)
         }
         val radioButton: RadioButton = convertView!!.findViewById(R.id.radiobutton)
-        radioButton.text = names[position]
+        radioButton.text = names[position].toUpperCase()
         radioButton.tag = position
         return convertView
     }

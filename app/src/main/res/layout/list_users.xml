@@ -36,38 +36,38 @@
                     android:layout_width="128dp"
                     android:layout_height="48dp"
                     android:layout_centerHorizontal="true"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/white"
                     android:fontFamily="serif-monospace"
                     android:hint="@string/player1"
-                    android:textColorHint="@color/white"
-                    android:maxLength="20"/>
+                    android:inputType="textPersonName"
+                    android:maxLength="20"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
 
                 <EditText
                     android:id="@+id/editText2"
                     android:layout_width="128dp"
                     android:layout_height="48dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@id/editText1"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
                     android:fontFamily="serif-monospace"
                     android:hint="@string/player2"
-                    android:textColorHint="@color/white"
-                    android:maxLength="20"/>
+                    android:inputType="textPersonName"
+                    android:maxLength="20"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
 
                 <EditText
                     android:id="@+id/editText3"
                     android:layout_width="128dp"
                     android:layout_height="48dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@id/editText2"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
                     android:fontFamily="serif-monospace"
                     android:hint="@string/player3"
-                    android:textColorHint="@color/white"
-                    android:maxLength="20"/>
+                    android:inputType="textPersonName"
+                    android:maxLength="20"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
 
                 <Button
                     android:id="@+id/addUser"
