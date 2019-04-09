@@ -3,6 +3,7 @@ package com.garcia.valentin.alasantede
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
 import com.garcia.valentin.alasantede.utils.cleanScore
 import com.garcia.valentin.alasantede.utils.lapQuestion
@@ -31,6 +32,10 @@ class Result : AppCompatActivity() {
         var highscore = 0
         var drinking = ""
 
+        if(lapQuestion%3 == 1) {
+            go_again.visibility = View.INVISIBLE
+        }
+
         MobileAds.initialize(this, getString(R.string.admob_app_id))
         mInterstitialAd = InterstitialAd(this).apply {
             //TODO : this is production id, need to be set before publication
@@ -39,6 +44,7 @@ class Result : AppCompatActivity() {
             adListener = (object : AdListener() {
                 override fun onAdClosed() {
 
+                    loadAd()
                     cleanScore()
                     lapQuestion++
                     startNewQuestion()
@@ -49,6 +55,13 @@ class Result : AppCompatActivity() {
 
                     Toast.makeText(applicationContext, getString(R.string.error_internet),
                             Toast.LENGTH_SHORT).show()
+                    go_again.visibility = View.VISIBLE
+                }
+
+                override fun onAdLoaded() {
+                    super.onAdLoaded()
+
+                    go_again.visibility = View.VISIBLE
                 }
             })
         }
